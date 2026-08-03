@@ -1,0 +1,54 @@
+name: breath
+description: "A Breathing & Relaxation Timer app for mindful breathing practice."
+publish_to: 'none'
+version: 1.0.3
+
+environment:
+  sdk: ^3.9.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # State Management
+  provider: ^6.1.1
+  
+  # Dependency Injection
+  get_it: ^8.0.2
+  
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  
+  # UI & Animations
+  google_fonts: ^6.2.1
+  flutter_animate: ^4.5.0
+  cached_network_image: ^3.4.1
+  
+  # Optional Features
+  vibration: ^2.0.0
+  audioplayers: ^6.1.0
+  flutter_launcher_icons: ^0.14.4
+  flex_color_scheme: ^8.3.1
+  
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.13
+
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/sounds/
+    - assets/logo.png
+
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/logo.png"
+  min_sdk_android: 21 # android min sdk min:16, default 21
+
