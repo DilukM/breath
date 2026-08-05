@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'colors.dart';
 
 /// Defines light and dark themes for the app
@@ -8,6 +7,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.light,
+      fontFamily: 'SpaceGrotesk',
       primaryColor: AppColors.lightNeon,
       scaffoldBackgroundColor: AppColors.lightBg,
       colorScheme: ColorScheme.light(
@@ -28,7 +28,8 @@ class AppTheme {
             borderRadius: BorderRadius.circular(999),
           ),
           elevation: 0,
-          textStyle: GoogleFonts.spaceGrotesk(
+          textStyle: const TextStyle(
+            fontFamily: 'SpaceGrotesk',
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -48,6 +49,7 @@ class AppTheme {
     return ThemeData(
       useMaterial3: true,
       brightness: Brightness.dark,
+      fontFamily: 'SpaceGrotesk',
       primaryColor: AppColors.darkNeon,
       scaffoldBackgroundColor: AppColors.darkBg,
       colorScheme: ColorScheme.dark(
@@ -68,7 +70,8 @@ class AppTheme {
             borderRadius: BorderRadius.circular(999),
           ),
           elevation: 0,
-          textStyle: GoogleFonts.spaceGrotesk(
+          textStyle: const TextStyle(
+            fontFamily: 'SpaceGrotesk',
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -86,44 +89,52 @@ class AppTheme {
 
   static TextTheme _textTheme(Color fg, Color muted) {
     return TextTheme(
-      displayLarge: GoogleFonts.spaceGrotesk(
+      displayLarge: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 38,
         fontWeight: FontWeight.w500,
         letterSpacing: -0.4,
         color: fg,
       ),
-      displayMedium: GoogleFonts.spaceGrotesk(
+      displayMedium: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 30,
         fontWeight: FontWeight.w500,
         letterSpacing: -0.3,
         color: fg,
       ),
-      displaySmall: GoogleFonts.spaceGrotesk(
+      displaySmall: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 24,
         fontWeight: FontWeight.w500,
         color: fg,
       ),
-      headlineMedium: GoogleFonts.spaceGrotesk(
+      headlineMedium: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 20,
         fontWeight: FontWeight.w500,
         color: fg,
       ),
-      bodyLarge: GoogleFonts.spaceGrotesk(
+      bodyLarge: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 16,
         fontWeight: FontWeight.normal,
         color: fg,
       ),
-      bodyMedium: GoogleFonts.spaceGrotesk(
+      bodyMedium: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 14,
         fontWeight: FontWeight.normal,
         color: muted,
       ),
-      bodySmall: GoogleFonts.spaceGrotesk(
+      bodySmall: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 12,
         fontWeight: FontWeight.normal,
         color: muted,
       ),
-      labelSmall: GoogleFonts.spaceGrotesk(
+      labelSmall: TextStyle(
+        fontFamily: 'SpaceGrotesk',
         fontSize: 10,
         fontWeight: FontWeight.w600,
         letterSpacing: 0.6,
