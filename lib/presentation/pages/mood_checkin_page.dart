@@ -47,7 +47,7 @@ class _MoodCheckInPageState extends State<MoodCheckInPage> {
               Text(
                 'How are you\nfeeling right now?',
                 style: TextStyle(
-                  fontFamily: 'Space Grotesk',
+                  fontFamily: 'SpaceGrotesk',
                   fontSize: 30,
                   fontWeight: FontWeight.w500,
                   height: 1.1,

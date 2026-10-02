@@ -38,7 +38,7 @@ class LibraryPage extends StatelessWidget {
                     Text(
                       'Pick your\nbreath.',
                       style: TextStyle(
-                        fontFamily: 'Space Grotesk',
+                        fontFamily: 'SpaceGrotesk',
                         fontSize: 30,
                         fontWeight: FontWeight.w500,
                         height: 1.08,
@@ -136,7 +136,7 @@ class _HeroCard extends StatelessWidget {
                   Text(
                     technique.name,
                     style: const TextStyle(
-                      fontFamily: 'Space Grotesk',
+                      fontFamily: 'SpaceGrotesk',
                       fontSize: 24,
                       fontWeight: FontWeight.w500,
                       color: Colors.white,

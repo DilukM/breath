@@ -13,7 +13,7 @@ class AppConstants {
   static const Duration breathingTransition = Duration(milliseconds: 800);
   
   // Text constants
-  static const String appTitle = 'Breathe';
+  static const String appTitle = 'Mindful Breathing';
   static const String appDescription = 'Take a moment to calm your mind\nand find your peace';
   static const String startSession = 'Start Session';
   static const String endSession = 'End Session';
@@ -36,9 +36,10 @@ class AppConstants {
   static const String vibrationEnabledKey = 'vibration_enabled';
   static const String soundEnabledKey = 'sound_enabled';
   static const String themeKey = 'theme_mode';
-
-  // Ambience options (decorative sound chips)
-  static const List<String> ambienceOptions = ['Forest', 'Rain', 'Ocean', 'Drone'];
+  static const String stealthModeKey = 'stealth_mode_enabled';
+  static const String reminderEnabledKey = 'daily_reminder_enabled';
+  static const String reminderHourKey = 'daily_reminder_hour';
+  static const String reminderMinuteKey = 'daily_reminder_minute';
 }
 
 /// Breathing phases enum

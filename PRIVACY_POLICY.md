@@ -1,12 +1,12 @@
-# Privacy Policy for Breathe
+# Privacy Policy for Mindful Breathing
 
 **Last updated: August 04, 2026**
 
-This privacy policy describes how the Breathe mobile application ("the App", "we", "our") handles information when you use it.
+This privacy policy describes how the Mindful Breathing mobile application ("the App", "we", "our") handles information when you use it.
 
 ## Summary
 
-Breathe does not collect, transmit, or share any personal data. Everything you do in the app — your session history, your chosen breathing technique, your mood check-ins, and your app settings — is stored **only on your device** and never leaves it.
+Mindful Breathing does not collect, transmit, or share any personal data. Everything you do in the app — your session history, your chosen breathing technique, your mood check-ins, and your app settings — is stored **only on your device** and never leaves it.
 
 ## Information We Do Not Collect
 
@@ -33,9 +33,10 @@ This data is stored in app-private storage on your device. It is never uploaded,
 
 ## Permissions
 
-The App may request the following device permission:
+The App may request the following device permissions:
 
 - **Vibration** — used to provide haptic feedback during breathing phase transitions (e.g. a gentle pulse when you should inhale or exhale). This permission does not involve access to, or collection of, any personal data.
+- **Notifications** (optional) — used solely to deliver scheduled local daily reminders at your chosen time. These notifications are scheduled locally using the device's internal operating system clock; no push tokens or server communications are used.
 
 The App does not request access to your camera, microphone, contacts, location, or storage beyond its own private app data.
 
@@ -49,7 +50,7 @@ The App is not directed at children and does not knowingly collect any informati
 
 ## Health Disclaimer
 
-Breathe is intended for general relaxation and wellness purposes only. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any medical condition. Please consult a healthcare provider for medical advice.
+Mindful Breathing is intended for general relaxation and wellness purposes only. It is not a medical device and is not intended to diagnose, treat, cure, or prevent any medical condition. Please consult a healthcare provider for medical advice.
 
 ## Changes to This Policy
 
@@ -59,6 +60,4 @@ If this policy changes — for example, if a future version of the App adds an o
 
 If you have any questions about this privacy policy, please contact:
 
-**your-contact-email@example.com**
-
-*(placeholder — replace with the contact address you want to publish before submitting to the Play Store)*
+**dilukedu@gmail.com**

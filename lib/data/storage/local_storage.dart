@@ -10,7 +10,18 @@ class LocalStorage {
   /// Initialize Hive and open boxes
   Future<void> init() async {
     await Hive.initFlutter();
-    
+    await _openBoxes();
+  }
+
+  /// Test-only entry point: initializes Hive against a plain filesystem
+  /// path instead of [Hive.initFlutter], which requires platform channels
+  /// (path_provider) unavailable under `flutter test`.
+  Future<void> initForTesting(String path) async {
+    Hive.init(path);
+    await _openBoxes();
+  }
+
+  Future<void> _openBoxes() async {
     // Register adapters
     if (!Hive.isAdapterRegistered(0)) {
       Hive.registerAdapter(BreathingSessionAdapter());
@@ -79,6 +90,54 @@ class LocalStorage {
   /// Set sound enabled
   Future<void> setSoundEnabled(bool enabled) async {
     await saveSetting(AppConstants.soundEnabledKey, enabled);
+  }
+
+  /// Check if stealth (pocket / haptic-only) mode is enabled by default
+  bool isStealthModeEnabled() {
+    return getSetting<bool>(
+      AppConstants.stealthModeKey,
+      defaultValue: false,
+    ) ?? false;
+  }
+
+  /// Set stealth (pocket / haptic-only) mode
+  Future<void> setStealthModeEnabled(bool enabled) async {
+    await saveSetting(AppConstants.stealthModeKey, enabled);
+  }
+
+  /// Check if daily reminder notification is enabled
+  bool isReminderEnabled() {
+    return getSetting<bool>(
+      AppConstants.reminderEnabledKey,
+      defaultValue: false,
+    ) ?? false;
+  }
+
+  /// Set daily reminder notification enabled
+  Future<void> setReminderEnabled(bool enabled) async {
+    await saveSetting(AppConstants.reminderEnabledKey, enabled);
+  }
+
+  /// Get scheduled daily reminder hour (0-23, default: 20 for 8 PM)
+  int getReminderHour() {
+    return getSetting<int>(
+      AppConstants.reminderHourKey,
+      defaultValue: 20,
+    ) ?? 20;
+  }
+
+  /// Get scheduled daily reminder minute (0-59, default: 0)
+  int getReminderMinute() {
+    return getSetting<int>(
+      AppConstants.reminderMinuteKey,
+      defaultValue: 0,
+    ) ?? 0;
+  }
+
+  /// Save scheduled daily reminder time
+  Future<void> setReminderTime(int hour, int minute) async {
+    await saveSetting(AppConstants.reminderHourKey, hour);
+    await saveSetting(AppConstants.reminderMinuteKey, minute);
   }
 
   /// Get theme mode (dark mode enabled)
@@ -178,13 +237,13 @@ class LocalStorage {
     await saveSetting('selected_technique', id);
   }
 
-  /// Selected ambience sound label (decorative — Forest/Rain/Ocean/Drone).
-  String getSelectedAmbience() {
-    return getSetting<String>('selected_ambience', defaultValue: 'Forest') ?? 'Forest';
+  /// Selected ambience track id (see [kAmbienceTracks]).
+  String getSelectedAmbienceId() {
+    return getSetting<String>('selected_ambience', defaultValue: 'forest') ?? 'forest';
   }
 
-  Future<void> setSelectedAmbience(String label) async {
-    await saveSetting('selected_ambience', label);
+  Future<void> setSelectedAmbienceId(String id) async {
+    await saveSetting('selected_ambience', id);
   }
 
   /// Whether the user has completed the onboarding screen before.

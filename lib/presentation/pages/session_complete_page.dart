@@ -64,7 +64,7 @@ class _SessionCompletePageState extends State<SessionCompletePage> {
                 Text(
                   'Well done.',
                   style: TextStyle(
-                    fontFamily: 'Space Grotesk',
+                    fontFamily: 'SpaceGrotesk',
                     fontSize: 32,
                     fontWeight: FontWeight.w500,
                     color: tokens.fg,
@@ -163,7 +163,7 @@ class _SessionCompletePageState extends State<SessionCompletePage> {
         children: [
           Text(
             value,
-            style: TextStyle(fontFamily: 'Space Grotesk', fontSize: 20, fontWeight: FontWeight.w500, color: tokens.fg),
+            style: TextStyle(fontFamily: 'SpaceGrotesk', fontSize: 20, fontWeight: FontWeight.w500, color: tokens.fg),
           ),
           const SizedBox(height: 2),
           Text(label, style: TextStyle(fontSize: 11, color: tokens.muted), textAlign: TextAlign.center),

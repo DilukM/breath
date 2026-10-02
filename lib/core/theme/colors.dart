@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 /// Centralized color palette for the app.
 ///
-/// Tokens mirror the "Still — neon on photography" direction: a near-black
+/// Tokens mirror the "Mindful Breathing — neon on photography" direction: a near-black
 /// (or, in light mode, a pale mint) ground under real photography, with a
 /// neon green primary and cyan secondary drawn in light on top.
 class AppColors {

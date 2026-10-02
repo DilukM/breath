@@ -1,4 +1,4 @@
-# 🌬️ Breathe - Mindful Breathing & Relaxation Timer
+# 🌬️ Mindful Breathing - Relaxation Timer
 
 A beautiful Flutter app that helps users practice mindful breathing using smooth animations, timers, and soothing color transitions.
 

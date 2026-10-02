@@ -60,7 +60,7 @@ class RingEmitter extends StatelessWidget {
               Text(
                 '$phaseSecondsRemaining',
                 style: TextStyle(
-                  fontFamily: 'Space Grotesk',
+                  fontFamily: 'SpaceGrotesk',
                   fontSize: 40,
                   fontWeight: FontWeight.w500,
                   color: tokens.ink,

@@ -1,7 +1,7 @@
-name: breath
+name: mindful_breathing
 description: "A Breathing & Relaxation Timer app for mindful breathing practice."
 publish_to: 'none'
-version: 1.0.3
+version: 1.0.5+4
 
 environment:
   sdk: ^3.9.2
@@ -24,10 +24,14 @@ dependencies:
   flutter_animate: ^4.5.0
   
   # Optional Features
-  vibration: ^2.0.0
   audioplayers: ^6.1.0
+  wakelock_plus: ^1.2.8
   flutter_launcher_icons: ^0.14.4
   flex_color_scheme: ^8.3.1
+  url_launcher: ^6.3.2
+  flutter_local_notifications: ^20.1.0
+  timezone: ^0.10.1
+  vibration: ^3.1.8
   
 
 dev_dependencies:

@@ -45,7 +45,7 @@ class ProfilePage extends StatelessWidget {
                               child: Text(
                                 'A',
                                 style: TextStyle(
-                                  fontFamily: 'Space Grotesk',
+                                  fontFamily: 'SpaceGrotesk',
                                   fontSize: 32,
                                   fontWeight: FontWeight.w500,
                                   color: tokens.neon,
@@ -57,7 +57,7 @@ class ProfilePage extends StatelessWidget {
                           Text(
                             'Your practice',
                             style: TextStyle(
-                              fontFamily: 'Space Grotesk',
+                              fontFamily: 'SpaceGrotesk',
                               fontSize: 22,
                               fontWeight: FontWeight.w500,
                               color: tokens.fg,
@@ -123,7 +123,7 @@ class ProfilePage extends StatelessWidget {
           children: [
             Text(
               value,
-              style: TextStyle(fontFamily: 'Space Grotesk', fontSize: 20, fontWeight: FontWeight.w500, color: tokens.neon),
+              style: TextStyle(fontFamily: 'SpaceGrotesk', fontSize: 20, fontWeight: FontWeight.w500, color: tokens.neon),
             ),
             const SizedBox(height: 3),
             Text(label, style: TextStyle(fontSize: 10.5, color: tokens.muted), textAlign: TextAlign.center),

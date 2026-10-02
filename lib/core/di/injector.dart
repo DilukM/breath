@@ -1,4 +1,5 @@
 import 'package:get_it/get_it.dart';
+import '../services/notification_service.dart';
 import '../../data/storage/local_storage.dart';
 import '../../presentation/providers/breathing_provider.dart';
 import '../../presentation/providers/theme_provider.dart';
@@ -12,6 +13,19 @@ Future<void> setupDependencies() async {
   final localStorage = LocalStorage();
   await localStorage.init();
   getIt.registerSingleton<LocalStorage>(localStorage);
+
+  // Register and initialize NotificationService
+  final notificationService = NotificationService();
+  await notificationService.init();
+  getIt.registerSingleton<NotificationService>(notificationService);
+
+  // Re-schedule daily reminder if enabled
+  if (localStorage.isReminderEnabled()) {
+    await notificationService.scheduleDailyReminder(
+      hour: localStorage.getReminderHour(),
+      minute: localStorage.getReminderMinute(),
+    );
+  }
 
   // Register ThemeProvider as singleton
   getIt.registerSingleton<ThemeProvider>(

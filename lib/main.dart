@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'core/di/injector.dart';
 import 'core/theme/app_theme.dart';
+import 'core/utils/constants.dart';
 import 'data/storage/local_storage.dart';
 import 'presentation/providers/breathing_provider.dart';
 import 'presentation/providers/theme_provider.dart';
@@ -42,7 +43,7 @@ class BreathApp extends StatelessWidget {
       child: Consumer<ThemeProvider>(
         builder: (context, themeProvider, _) {
           return MaterialApp(
-            title: 'Breathe',
+            title: AppConstants.appTitle,
             debugShowCheckedModeBanner: false,
             theme: AppTheme.lightTheme,
             darkTheme: AppTheme.darkTheme,

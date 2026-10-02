@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import '../../core/theme/colors.dart';
 import '../../core/utils/constants.dart';
 import '../../core/utils/unsplash.dart';
+import '../../data/models/ambience_track.dart';
 import '../../routes/app_routes.dart';
 import '../providers/breathing_provider.dart';
 import '../widgets/glass_panel.dart';
@@ -81,10 +82,10 @@ class HomePage extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              'STILL',
+                              AppConstants.appTitle,
                               style: TextStyle(
-                                fontSize: 11.5,
-                                letterSpacing: 3,
+                                fontFamily: 'SpaceGrotesk',
+                                fontSize: 18,
                                 color: tokens.neon,
                                 shadows: [Shadow(color: tokens.neon.withOpacity(0.6), blurRadius: 14)],
                               ),
@@ -118,7 +119,7 @@ class HomePage extends StatelessWidget {
                         Text(
                           "Let's take\na moment.",
                           style: TextStyle(
-                            fontFamily: 'Space Grotesk',
+                            fontFamily: 'SpaceGrotesk',
                             fontWeight: FontWeight.w500,
                             fontSize: 34,
                             height: 1.06,
@@ -155,7 +156,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     provider.technique.pattern,
                                     style: TextStyle(
-                                      fontFamily: 'Space Grotesk',
+                                      fontFamily: 'SpaceGrotesk',
                                       fontSize: 28,
                                       fontWeight: FontWeight.w500,
                                       color: tokens.fg,
@@ -191,7 +192,7 @@ class HomePage extends StatelessWidget {
                                   Text(
                                     '${provider.selectedDuration}',
                                     style: TextStyle(
-                                      fontFamily: 'Space Grotesk',
+                                      fontFamily: 'SpaceGrotesk',
                                       fontSize: 48,
                                       fontWeight: FontWeight.w500,
                                       height: 1,
@@ -245,7 +246,40 @@ class HomePage extends StatelessWidget {
                             ],
                           ),
                         ).animate().fadeIn(duration: 500.ms, delay: 150.ms),
-                        const SizedBox(height: 16),
+                        const SizedBox(height: 14),
+                        GestureDetector(
+                          onTap: () => provider.toggleStealthMode(),
+                          child: Container(
+                            padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 8),
+                            decoration: BoxDecoration(
+                              color: provider.isStealthMode ? tokens.neon.withOpacity(0.18) : tokens.glass.withOpacity(0.06),
+                              borderRadius: BorderRadius.circular(999),
+                              border: Border.all(
+                                color: provider.isStealthMode ? tokens.neon.withOpacity(0.6) : tokens.fg.withOpacity(0.1),
+                              ),
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Icon(
+                                  provider.isStealthMode ? Icons.shield_moon : Icons.shield_moon_outlined,
+                                  size: 15,
+                                  color: provider.isStealthMode ? tokens.neon : tokens.muted,
+                                ),
+                                const SizedBox(width: 6),
+                                Text(
+                                  provider.isStealthMode ? 'Pocket Mode: On (Silent & Haptic)' : 'Pocket Mode: Off',
+                                  style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: provider.isStealthMode ? FontWeight.w600 : FontWeight.w400,
+                                    color: provider.isStealthMode ? tokens.neon : tokens.muted,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        const SizedBox(height: 14),
                         SizedBox(
                           width: double.infinity,
                           height: 58,
@@ -275,12 +309,12 @@ class HomePage extends StatelessWidget {
                           height: 38,
                           child: ListView(
                             scrollDirection: Axis.horizontal,
-                            children: AppConstants.ambienceOptions.map((label) {
-                              final selected = provider.ambience == label;
+                            children: kAmbienceTracks.map((track) {
+                              final selected = provider.ambienceTrack.id == track.id;
                               return Padding(
                                 padding: const EdgeInsets.only(right: 9),
                                 child: GestureDetector(
-                                  onTap: () => provider.setAmbience(label),
+                                  onTap: () => provider.setAmbience(track.id),
                                   child: Container(
                                     padding: const EdgeInsets.symmetric(horizontal: 16),
                                     alignment: Alignment.center,
@@ -292,7 +326,7 @@ class HomePage extends StatelessWidget {
                                       ),
                                     ),
                                     child: Text(
-                                      label,
+                                      track.label,
                                       style: TextStyle(
                                         fontSize: 12.5,
                                         color: selected ? tokens.neon : tokens.muted,

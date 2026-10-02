@@ -50,7 +50,7 @@ class HistoryPage extends StatelessWidget {
                         Text(
                           'Your year',
                           style: TextStyle(
-                            fontFamily: 'Space Grotesk',
+                            fontFamily: 'SpaceGrotesk',
                             fontSize: 26,
                             fontWeight: FontWeight.w500,
                             color: tokens.fg,
@@ -281,7 +281,7 @@ class HistoryPage extends StatelessWidget {
             Text(
               value,
               style: TextStyle(
-                fontFamily: 'Space Grotesk',
+                fontFamily: 'SpaceGrotesk',
                 fontSize: 22,
                 fontWeight: FontWeight.w500,
                 color: highlight ? tokens.neon : tokens.fg,

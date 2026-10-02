@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import '../../core/di/injector.dart';
 import '../../core/theme/colors.dart';
+import '../../core/utils/constants.dart';
 import '../../core/utils/unsplash.dart';
 import '../../data/storage/local_storage.dart';
 import '../../routes/app_routes.dart';
@@ -71,10 +72,10 @@ class OnboardingPage extends StatelessWidget {
                   ).animate().fadeIn(duration: 500.ms),
                   const SizedBox(height: 28),
                   Text(
-                    'Still',
+                    AppConstants.appTitle,
                     style: TextStyle(
-                      fontSize: 12,
-                      letterSpacing: 3.2,
+                      fontFamily: 'SpaceGrotesk',
+                      fontSize: 18,
                       color: tokens.neon,
                       shadows: [Shadow(color: tokens.neon.withOpacity(0.6), blurRadius: 14)],
                     ),
@@ -83,7 +84,7 @@ class OnboardingPage extends StatelessWidget {
                   Text(
                     "Let's take\na moment.",
                     style: TextStyle(
-                      fontFamily: 'Space Grotesk',
+                      fontFamily: 'SpaceGrotesk',
                       fontWeight: FontWeight.w500,
                       fontSize: 44,
                       height: 1.06,
